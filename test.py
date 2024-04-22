@@ -1,8 +1,9 @@
 import tkinter as tk
 import subprocess
 import os
-def ping():
-    os.popen('ping -n 1 ' + 'www.google.com')
+import volatility3
+def volatility(file):
+    os.popen('python3 vol.py -f '+file+' windows.info')
 
 def run_command(command):
     subprocess.run(command, shell=True)
@@ -17,7 +18,7 @@ if __name__ == "__main__":
 
     # Create buttons
     create_button(root, "Button 1", "ping www.google.com")
-    create_button(root, "Button 2", "python script2.py")
+    create_button(root, "Button 2", "python3 vol.py -f '+file+' windows.info")
     create_button(root, "Button 3", "python script3.py")
 
     root.mainloop()
